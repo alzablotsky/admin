@@ -1,0 +1,45 @@
+  
+<form id="customerForm" name="customerForm"
+class="form-horizontal" style="margin-left: 20px"
+#customerForm="ngForm">
+
+        <div class="form-group">
+            <label for="inputName" class="control-label col-sm-2">Name</label>
+
+            <div class="col-sm-6">
+                <input class="form-control" placeholder="Enter name" 
+                type="text" id="name" name = "name"
+                required pattern="^[A-Za-z0-9]{3,20}$"
+                [(ngModel)] = "customer.customerName" #name="ngModel"/>
+
+                <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert alert-danger">
+   
+                <div *ngIf="name.errors.pattern">
+            Invalid name. Name must include 3 to 20 characters (letters or numbers) without spaces.
+             </div>
+             
+           </div>
+            </div>
+        </div>
+
+
+    <div class="form-group">
+        <label for="inputPassword" class="control-label col-sm-2">Password</label>
+        <div class="col-sm-6">
+            <input class="form-control" placeholder="Enter password"
+            [(ngModel)] = "customer.password"
+            type="password" id="inputPassword" name="inputPassword" required/>
+        </div>
+    </div>
+   
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success"
+            [disabled]="customerForm.invalid"
+              (click)="createCustomer()">Create</button>
+        </div>
+    </div>
+</form>
+

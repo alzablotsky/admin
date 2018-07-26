@@ -1,0 +1,52 @@
+<form id="customerForm" name="customerForm"
+ class="form-horizontal" style="margin-left: 20px"
+ #customerForm="ngForm">
+   
+        <div class="form-group">
+            <label for="selectId" class="control-label col-sm-2">Id</label>
+    
+         <div class="col-sm-6">
+          <select class="form-control" name="selectId" id = "selectId"
+          required
+          (change)="getCustomer()"
+          [(ngModel)] = "id"
+          #selectId="ngModel" >
+          <option value ="" disabled selected>--Select customer ID--</option> 
+          <option value={{c.id}} *ngFor="let c of _customers">{{c.id}}</option>
+           </select>
+
+           <div *ngIf="selectId.invalid && (selectId.dirty || selectId.touched)"
+           class="alert alert-danger">
+        </div>
+        </div>
+        </div>
+  
+    <div class="form-group">
+        <label for="inputName" class="control-label col-sm-2">Name</label>
+        <div class="col-sm-6">
+            <input class="form-control"  
+            [(ngModel)] = "customer.customerName"
+            type="text" id="inputName" name = "inputName" readonly />
+        </div>
+    </div>
+  
+
+   <div class="form-group">
+       <label for="inputPassword" class="control-label col-sm-2">Password</label>
+       <div class="col-sm-6">
+           <input class="form-control" 
+           [(ngModel)] = "customer.password"
+           type="password" id="inputPassword" name="inputPassword" readonly/>
+       </div>
+   </div>
+
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-danger"
+        [disabled]="customerForm.invalid"
+        (click)="removeCustomer()">Remove</button>
+    </div>
+</div>
+
+</form>
+ 

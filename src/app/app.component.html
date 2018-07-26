@@ -1,0 +1,82 @@
+<app-header></app-header>
+
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <div class="col-md-2">
+                <a routerLink="/createcompany" class="btn btn-success" role="button">Create Company</a>
+                </div>
+            </li>
+
+            <li>
+                    <div class="col-md-2">
+                    <a routerLink="/updatecompany" class="btn btn-warning" role="button">Update Company</a>
+                    </div>
+            </li>
+
+            <li>
+                    <div class="col-md-2">
+                    <a routerLink="/removecompany" class="btn btn-danger" role="button">Remove Company</a>
+                    </div>
+            </li>
+
+            <li>
+                    <div class="col-md-2">
+                    <a routerLink="/getcompany" class="btn btn-primary" role="button">Get Company</a>
+                    </div>
+            </li>
+
+            <li>
+                    <div class="col-md-2">
+                    <a routerLink="/getallcompanies" class="btn btn-info" role="button">Get All Companies</a>
+                    </div>
+            </li>
+<hr>
+
+<li>
+        <div class="col-md-2">
+        <a routerLink="/createcustomer" class="btn btn-success" role="button">Create Customer</a>
+        </div>
+    </li>
+
+    <li>
+            <div class="col-md-2">
+            <a routerLink="/updatecustomer" class="btn btn-warning" role="button">Update Customer</a>
+            </div>
+    </li>
+
+    <li>
+            <div class="col-md-2">
+            <a routerLink="/removecustomer" class="btn btn-danger" role="button">Remove Customer</a>
+            </div>
+    </li>
+
+    <li>
+            <div class="col-md-2">
+            <a routerLink="/getcustomer" class="btn btn-primary" role="button">Get Customer</a>
+            </div>
+    </li>
+
+    <li>
+            <div class="col-md-2">
+            <a routerLink="/getallcustomers" class="btn btn-info" role="button">Get All Customers</a>
+            </div>
+    </li>
+
+  </ul>
+
+
+    </div>
+</nav>
+
+<div id="div-router">
+        <router-outlet></router-outlet>
+    </div>

@@ -1,0 +1,62 @@
+<form id="companyForm" name="companyForm"
+ class="form-horizontal" style="margin-left: 20px"
+ #companyForm="ngForm">
+   
+        <div class="form-group">
+            <label for="selectId" class="control-label col-sm-2">Id</label>
+    
+         <div class="col-sm-6">
+          <select class="form-control" name="selectId" id = "selectId"
+          required
+          (change)="getCompany()"
+          [(ngModel)] = "id"
+          #selectId="ngModel" >
+          <option value ="" disabled selected>--Select company ID--</option> 
+          <option value={{c.id}} *ngFor="let c of _companies">{{c.id}}</option>
+           </select>
+
+           <div *ngIf="selectId.invalid && (selectId.dirty || selectId.touched)"
+           class="alert alert-danger">
+        </div>
+        </div>
+        </div>
+  
+    <div class="form-group">
+        <label for="inputName" class="control-label col-sm-2">Name</label>
+        <div class="col-sm-6">
+            <input class="form-control"  
+            [(ngModel)] = "company.companyName"
+            type="text" id="inputName" name = "inputName" readonly />
+        </div>
+    </div>
+  
+
+   <div class="form-group">
+       <label for="inputPassword" class="control-label col-sm-2">Password</label>
+       <div class="col-sm-6">
+           <input class="form-control" 
+           [(ngModel)] = "company.password"
+           type="password" id="inputPassword" name="inputPassword" readonly/>
+       </div>
+   </div>
+  
+       <div class="form-group">
+           <label for="inputEmail" class="control-label col-sm-2">Email</label>
+           <div class="col-sm-6">
+               <input class="form-control" 
+               [(ngModel)] = "company.email"
+               type="text" id="inputEmail" name="inputEmail" readonly/>
+           </div>
+       </div>
+
+       <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-danger"
+            [disabled]="companyForm.invalid"
+            (click)="removeCompany()">Remove</button>
+        </div>
+    </div>
+
+</form>
+
+

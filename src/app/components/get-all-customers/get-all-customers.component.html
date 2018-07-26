@@ -1,0 +1,19 @@
+<div class="container">
+
+  <table style="margin-left: 10px" class="table table-striped table-bordered">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let c of _customers">
+                <td>{{c.id}}</td>
+                <td>{{c.customerName}}</td>
+                <td>{{c.password}}</td>
+        </tr>
+  </tbody>
+</table>
+</div>
