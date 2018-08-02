@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public url = "http://localhost:8080/login.html";
+public url ='../index.html';
 
   constructor() { }
 

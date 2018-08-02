@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class CompanyService {
 
-public url = 'http://localhost:8080/getcompany';  
+public url = 'getcompany';
 
 // dependency injection for http object
 constructor(private _http : Http) {
